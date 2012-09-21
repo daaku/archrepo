@@ -16,7 +16,7 @@ package() {
   install -d $pkgdir/usr/bin
   go build -o $pkgdir/usr/bin/archrepo
 
-	install -d "$pkgdir/usr/lib/systemd/system"
-	install -D -m 644 "$srcdir/archrepo.service" "$pkgdir/usr/lib/systemd/system/archrepo.service"
-	install -D -m 644 "$srcdir/archrepo.socket" "$pkgdir/usr/lib/systemd/system/archrepo.socket"
+  install -d "$pkgdir/usr/lib/systemd/system"
+  install -D -m 644 "$srcdir/archrepo.service" "$pkgdir/usr/lib/systemd/system/archrepo.service"
+  install -D -m 644 "$srcdir/archrepo.socket" "$pkgdir/usr/lib/systemd/system/archrepo.socket"
 }
