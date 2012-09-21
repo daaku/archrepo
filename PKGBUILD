@@ -1,5 +1,5 @@
 pkgname=archrepo
-pkgver=3
+pkgver=$(git log | wc -l)
 pkgrel=1
 pkgdesc="A tool to serve a arch package repo over http."
 arch=(x86_64 i686)
@@ -9,6 +9,7 @@ source=(
   archrepo.service
   archrepo.socket
 )
+md5sums=($(md5sum ${source[*]} | sed -e 's/ .*//' | tr '\n' ' '))
 license=('apache2')
 
 package() {
