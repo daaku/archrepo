@@ -3,6 +3,7 @@ Description=archrepo socket
 
 [Socket]
 ListenStream=127.0.0.1:2724
+ListenStream=127.0.0.1:2725
 
 [Install]
 WantedBy=sockets.target

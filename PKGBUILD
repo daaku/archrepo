@@ -11,6 +11,7 @@ source=(
 )
 md5sums=($(md5sum ${source[*]} | sed -e 's/ .*//' | tr '\n' ' '))
 license=('apache2')
+install=install
 
 package() {
   install -d $pkgdir/usr/bin

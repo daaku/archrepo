@@ -3,4 +3,3 @@ Description=archrepo server
 
 [Service]
 ExecStart=/usr/bin/archrepo -repo /home/naitik/pkgs/repo
-Restart=on-success
