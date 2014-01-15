@@ -4,7 +4,7 @@ package main
 
 import (
 	"flag"
-	"github.com/daaku/go.grace/gracehttp"
+	"github.com/ParsePlatform/go.grace/gracehttp"
 	"log"
 	"net/http"
 	"os"
@@ -33,8 +33,8 @@ func adminHandler() http.Handler {
 func main() {
 	flag.Parse()
 	err := gracehttp.Serve(
-		gracehttp.Handler{*repoAddr, http.FileServer(http.Dir(*repo))},
-		gracehttp.Handler{*adminAddr, adminHandler()},
+		&http.Server{Addr: *repoAddr, Handler: http.FileServer(http.Dir(*repo))},
+		&http.Server{Addr: *adminAddr, Handler: adminHandler()},
 	)
 	if err != nil {
 		log.Fatal(err)
